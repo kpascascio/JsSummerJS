@@ -80,3 +80,24 @@ if ( age >= 35){
 	console.log("You're outta luck!");
 }
 
+// Disclaimer: This is a classic job interview question. It would be really good for you to memorize and understand how it’s working just for understanding of the logic behind it. There are a lot of different ways to do it.
+ 
+// Write a program that prints from 1 to 100.
+// For multiples of three print "Fizz" instead of the number.
+// For multiples of five print "Buzz" instead of the number. 
+// For numbers which are multiples of both three and five print "FizzBuzz".
+
+var num = 1; 
+
+while( num < 101){
+	if ( num % 15 === 0){
+		console.log("FizzBuzz");
+	}else if (num % 3 === 0 ){
+		console.log("fizz");
+	} else if( num % 5 === 0){
+		console.log("buzz");
+	} else {
+		console.log(num);
+	}
+	num = num + 1; //wonky expression
+}
