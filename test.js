@@ -3,57 +3,45 @@
 var readline = require('readline');
 
 var randomNumber = Math.round(Math.random() * 10);
-var lives = 5;
 
-var terminal = readline.createInterface(
+var t = readline.createInterface(
 {
   input : process.stdin,
   output : process.stdout
 });
 
-terminal.setPrompt('Guess the number! (0-10): ');
-terminal.pro mpt();
-terminal.on('line', function(answer)
+t.setPrompt('Guess the number! (0-10): ');
+t.prompt();
+t.on('line', function(answer)
 {
   var answerNum = parseInt(answer);
 
   if (answerNum > randomNumber)
   {
     console.log('Too high!');
-    console.log('You have '+lives+' lives left');
   }
 
   else if (answerNum < randomNumber)
   {
     console.log('Too low!');
-    console.log('You have '+lives+' lives left');
   }
 
   else if (answerNum === randomNumber)
   {
-    console.log('W I N N E R ! ! !');
-    console.log('You lost only '+ (6-lives) + ' lives');
+    console.log('good job!!');
     process.exit(0);
   }
 
   else
   {
-    console.log("That wasn't a number I recognise");
-    console.log('You have '+lives+' lives');
+    console.log("please enter another number");
   }
 
-  lives--;
-  if (lives == 0)
-  {
-    console.log('G A M E  O V E R ! ! !');
-    process.exit(0);
-  }
-
-  terminal.prompt();
+  t.prompt();
 });
 
-terminal.on('close', function()
+t.on('close', function()
 {
-  console.log('C H I C K E N :P')
+  console.log('wut??? c\'mon son')
   process.exit(1);
 });
